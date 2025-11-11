@@ -736,6 +736,13 @@ section.cww-main-banner .animated-bg {
 
 /* Responsive Styles */
 @media (max-width: 991px) {
+    body {
+        font-size: 18px;
+    }
+    .cww-about-section .desc-wrapp p {
+        font-size: 19px;
+    }
+
     /* On mobile, the base style is collapsed */
     header.site-header {
         width: 100px;
@@ -823,5 +830,34 @@ section.cww-main-banner .animated-bg {
         height: 50px;
         right: -25px;
         font-size: 24px;
+    }
+}
+
+/* Icon visibility rules */
+.header-toggle-button .icon-arrow-left,
+.header-toggle-button .icon-arrow-right {
+    display: none;
+}
+
+/* Mobile view: hide toggle button */
+@media (max-width: 991px) {
+    .header-toggle-button {
+        display: none;
+    }
+}
+
+/* Desktop view: show arrows */
+@media (min-width: 992px) {
+    /* On desktop, the menu is expanded by default, so show the 'collapse' icon (left arrow) */
+    .header-toggle-button .icon-arrow-left {
+        display: inline-block;
+    }
+
+    /* When collapsed, show the 'expand' icon (right arrow) */
+    header.site-header.collapsed .header-toggle-button .icon-arrow-left {
+        display: none;
+    }
+    header.site-header.collapsed .header-toggle-button .icon-arrow-right {
+        display: inline-block;
     }
 }
