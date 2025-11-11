@@ -66,15 +66,19 @@ $(document).ready(function() {
         observer.observe(element);
     });
 
-    // Collapsible menu toggle
+    // Responsive menu toggle
     const toggleButton = document.getElementById('header-toggle-button');
     const siteHeader = document.getElementById('masthead');
     const siteContent = document.getElementById('cww-site-content');
 
     if (toggleButton && siteHeader && siteContent) {
         toggleButton.addEventListener('click', () => {
-            siteHeader.classList.toggle('collapsed');
-            siteContent.classList.toggle('collapsed');
+            if (window.innerWidth < 1024) {
+                siteHeader.classList.toggle('menu-open');
+            } else {
+                siteHeader.classList.toggle('collapsed');
+                siteContent.classList.toggle('collapsed');
+            }
         });
     }
 });
